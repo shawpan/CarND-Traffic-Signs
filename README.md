@@ -33,3 +33,36 @@ jupyter notebook Traffic_Signs_Recognition.ipynb
 ```
 3. Follow the instructions in the `Traffic_Signs_Recognition.ipynb` notebook.
 
+#**Test Results**
+Follow the keras version `traffic-sign-classification-with-keras.ipynb` for updated results
+###Validation accuracy 99.31 %
+###Test accuracy 95.44 %
+
+
+#Model architecture
+
+convolution2d_11 (Convolution2D) (None, 28, 28, 6)     456         convolution2d_input_9[0][0]      
+____________________________________________________________________________________________________
+maxpooling2d_10 (MaxPooling2D)   (None, 14, 14, 6)     0           convolution2d_11[0][0]           
+____________________________________________________________________________________________________
+activation_10 (Activation)       (None, 14, 14, 6)     0           maxpooling2d_10[0][0]            
+____________________________________________________________________________________________________
+convolution2d_12 (Convolution2D) (None, 10, 10, 16)    2416        activation_10[0][0]              
+____________________________________________________________________________________________________
+maxpooling2d_11 (MaxPooling2D)   (None, 5, 5, 16)      0           convolution2d_12[0][0]           
+____________________________________________________________________________________________________
+activation_11 (Activation)       (None, 5, 5, 16)      0           maxpooling2d_11[0][0]            
+____________________________________________________________________________________________________
+flatten_7 (Flatten)              (None, 400)           0           activation_11[0][0]              
+____________________________________________________________________________________________________
+dense_15 (Dense)                 (None, 128)           51328       flatten_7[0][0]                  
+____________________________________________________________________________________________________
+dropout_11 (Dropout)             (None, 128)           0           dense_15[0][0]                   
+____________________________________________________________________________________________________
+activation_12 (Activation)       (None, 128)           0           dropout_11[0][0]                 
+____________________________________________________________________________________________________
+dense_16 (Dense)                 (None, 43)            5547        activation_12[0][0]              
+
+Total params: 59747
+____________________________________________________________________________________________________
+Train on 26270 samples, validate on 12939 samples
